@@ -1,6 +1,6 @@
 /*
    name:       Jamie Johnson
-   Assignment: Project #1
+   Assignment: Lab #1
    Problem:
 */
 
@@ -50,15 +50,6 @@ public class Pennies
      System.out.printf("%18s%15d\n", dime_str, num_dimes);
      System.out.printf("%20s%13d\n", nickel_str, num_nickels);
      System.out.printf("%20s%13d\n", remainder_str, input_pennies);
-
-
-//      Coin Conversion
-//
-// Number of Quarters					XX
-// Number of Dimes					XX
-// Number of Nickels					   X
-// Remaining Pennies					   X
-
 
    }
 }
