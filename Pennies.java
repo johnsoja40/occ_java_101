@@ -51,5 +51,7 @@ public class Pennies
      System.out.printf("%20s%13d\n", nickel_str, num_nickels);
      System.out.printf("%20s%13d\n", remainder_str, input_pennies);
 
+     keyboard.close();
+
    }
 }
