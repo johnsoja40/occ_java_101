@@ -51,14 +51,5 @@ public class Pennies
      System.out.printf("%20s%13d\n", nickel_str, num_nickels);
      System.out.printf("%20s%13d\n", remainder_str, input_pennies);
 
-
-//      Coin Conversion
-//
-// Number of Quarters					XX
-// Number of Dimes					XX
-// Number of Nickels					   X
-// Remaining Pennies					   X
-
-
    }
 }
