@@ -1,6 +1,6 @@
 /*
    name:       Jamie Johnson
-   Assignment: Project #1
+   Assignment: Lab #1
    Problem:
 */
 
