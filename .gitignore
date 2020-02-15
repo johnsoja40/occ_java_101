@@ -1,2 +1,8 @@
 # Compiled class file
 *.class
+
+#Spotlight index files
+*.Spotlight*
+
+# mac fileystsem dir
+.fseventsd
