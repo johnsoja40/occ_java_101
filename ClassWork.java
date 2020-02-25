@@ -44,7 +44,15 @@ while ( x-- > 1)
       default  a--
                d++
                c++
+//need to understand this completely
+given a = 4; d = 6; n = 7; m = 4;
 
+for ( y = m; y <= n; y += 2)
+   for ( x = n; x >= m; x--)
+   {
+      a += d--;
+      system.out.println("a = " + a);
+   }
 
 # extra credit
 # 1
