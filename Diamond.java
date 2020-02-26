@@ -18,9 +18,11 @@ public class Diamond
 
     for ( int r = 0; r < size; r++)
     {
-      for ( int c = 0; c < ; c++)
+      // System.out.print("row is: " + r + "\n");
+      for ( int c = 0; c < size; c++)
       {
-        System.out.println("*");
+        // System.out.print("column is: " + c + "\n");
+        System.out.print("column is: " + c + "\n");
       }
     }
   }
