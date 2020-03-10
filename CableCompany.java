@@ -90,7 +90,6 @@ public class CableCompany
        System.out.println("This application can only handle Residential (R) or Business (B).");
        System.exit(0);
      }
-
      System.out.printf("\n%20s %10s\n","Account Number", account_num);
      System.out.printf("\n%16s         $%5.2f\n\n", "Amount Due", total);
      keyboard.close();
