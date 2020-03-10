@@ -13,6 +13,8 @@ public class CableCompany
 
      int account_num = 0;
      String account_type_input;
+     int premium_channel_input;
+     double premium_channel_total;
      char account_type;
      int premium_channels;
      int service_connections;
@@ -46,16 +48,23 @@ public class CableCompany
          System.exit(0);
        }
 
+       if ( account_type != 'B' && account_type != 'R')
+       {
+         System.out.println("This application can only handle Residential (R) or Business (B).");
+         System.exit(0);
+       }
+
        System.out.println("Please enter the current cable account number: ");
        account_num = keyboard.nextInt();
 
-       System.out.println("Please enter the number of premium channels : ");
-       premium_channels = keyboard.nextInt();
+       System.out.println("Please enter the number of premium channels: ");
+       premium_channel_input = keyboard.nextInt();
 
        switch (account_type)
        {
          case 'R':
-           total = res_proc_fee + res_serv_fee + res_prem_fee;
+           premium_channel_total = premium_channel_input * res_prem_fee;
+           total = res_proc_fee + res_serv_fee + premium_channel_total;
            break;
          case 'B':
            System.out.println("Please enter the amount of Basic Service Connections: ");
@@ -68,7 +77,8 @@ public class CableCompany
            {
              bus_serv_fee_total = bus_serv_fee;
            }
-           total = bus_proc_fee + bus_serv_fee_total + bus_prem_fee;
+           premium_channel_total = premium_channel_input * bus_prem_fee;
+           total = bus_proc_fee + bus_serv_fee_total + premium_channel_total;
            break;
          default:
            System.out.println("account_type should be either Residential or Business.");
@@ -82,7 +92,7 @@ public class CableCompany
      }
 
      System.out.printf("\n%20s %10s\n","Account Number", account_num);
-     System.out.printf("\n%16s        $%6.2f\n\n", "Amount Due", total);
+     System.out.printf("\n%16s         $%5.2f\n\n", "Amount Due", total);
      keyboard.close();
    }
 }
