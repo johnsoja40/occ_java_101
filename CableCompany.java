@@ -32,24 +32,20 @@ public class CableCompany
      System.out.println("Please enter the cable account type (R for residential or B for Business): ");
      account_type_input = keyboard.nextLine();
 
-     if ( account_type_input.length() == 1 )
-     {
+     if ( account_type_input.length() == 1 ) {
        account_type = account_type_input.charAt(0);
-       if ( account_type == 'r' )
-       {
+       if ( account_type == 'r' ) {
          System.out.println("This program requires you pass in an upper case R for Residential Accounts.");
          System.out.println("The application will now close.");
          System.exit(0);
        }
-       if ( account_type == 'b' )
-       {
+       if ( account_type == 'b' ) {
          System.out.println("This program requires you pass in an upper case B for Business Accounts.");
          System.out.println("The application will now close.");
          System.exit(0);
        }
 
-       if ( account_type != 'B' && account_type != 'R')
-       {
+       if ( account_type != 'B' && account_type != 'R') {
          System.out.println("This application can only handle Residential (R) or Business (B).");
          System.exit(0);
        }
@@ -60,8 +56,7 @@ public class CableCompany
        System.out.println("Please enter the number of premium channels: ");
        premium_channel_input = keyboard.nextInt();
 
-       switch (account_type)
-       {
+       switch (account_type) {
          case 'R':
            premium_channel_total = premium_channel_input * res_prem_fee;
            total = res_proc_fee + res_serv_fee + premium_channel_total;
@@ -69,12 +64,10 @@ public class CableCompany
          case 'B':
            System.out.println("Please enter the amount of Basic Service Connections: ");
            service_connections = keyboard.nextInt();
-           if ( service_connections > 10 )
-           {
+           if ( service_connections > 10 ) {
              bus_serv_fee_total = ((service_connections - 10) * 5) + bus_serv_fee;
            }
-           else
-           {
+           else {
              bus_serv_fee_total = bus_serv_fee;
            }
            premium_channel_total = premium_channel_input * bus_prem_fee;
@@ -84,8 +77,7 @@ public class CableCompany
            System.out.println("account_type should be either Residential or Business.");
         }
      }
-     else
-     {
+     else {
        System.out.println("You entered more than one character for the Account Type.");
        System.out.println("This application can only handle Residential (R) or Business (B).");
        System.exit(0);
