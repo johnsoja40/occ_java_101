@@ -6,70 +6,51 @@
 
 public class SavingsAccount
 {
-  private double sbalance;
-  private double ebalance;
-  private double deposit;
-  private double withdrawl;;
-  private double irate;
   private double balance;
+  private double annual_interest_rate;
+  private int months;
+  private double total_deposits;
+  private double total_withdraws;;
+  private double total_interest;
 
-  public void set_sbal(double sbal)
+  public SavingsAccount(double start_balance, double annual_interest_rate, int months)
   {
-    sbalance = sbal;
+    balance = start_balance;
+    this.annual_interest_rate = annual_interest_rate / 100;
+    this.months = months;
   }
 
-  public void set_ebal(double ebal)
+  public void deposit(double amount)
   {
-    ebalance = ebal;
+    balance += amount;
+    total_deposits += amount;
   }
 
-  public void set_deposit(double dep)
+  public void withdraw(double amount)
   {
-    deposit = dep;
+    balance -= amount;
+    total_withdraws += amount;
   }
 
-  public void set_withdrawl(double w)
+  public void monthly_interest()
   {
-      withdrawl = w;
+    double monthly_interest = balance * get_monthly_interest_rate();
+    total_interest += monthly_interest;
+    balance += monthly_interest;
   }
 
-  public void set_irate(double i)
+  public double get_balance()
   {
-    irate = i;
+    return balance;
   }
 
-  public double get_sbal()
+  public double get_monthly_interest_rate()
   {
-    return sbalance;
+    return annual_interest_rate / months;
   }
 
-  public double get_ebal()
+  public double get_total_interest()
   {
-    return ebalance;
-  }
-
-  public double get_deposit()
-  {
-    return deposit;
-  }
-
-  public double get_withdrawl()
-  {
-    return withdrawl;
-  }
-
-  public double get_irate()
-  {
-    return irate;
-  }
-
-  public double calc_withdrawl()
-  {
-    return ebalance = sbalance - withdrawl;
-  }
-
-  public double calc_deposit()
-  {
-    return ebalance = sbalance + deposit;
+    return total_interest;
   }
 }

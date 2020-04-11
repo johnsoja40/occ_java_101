@@ -11,25 +11,46 @@ public class BankingApp
 {
   public static void main(String[] args) throws IOException
   {
+    double start_balance;
+    double annual_interest_rate;
+    int months;
+    double deposit_amount;
+    double withdraw_amount;
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter starting balance: $");
+    start_balance = input.nextDouble();
+
+    System.out.print("Enter annual interest rate: ");
+    annual_interest_rate = input.nextDouble();
+
+    System.out.print("Enter the number of months: ");
+    months = input.nextInt();
+
+    SavingsAccount cust = new SavingsAccount(start_balance, annual_interest_rate, months);
 
     File deposits = new File("deposits.txt");
-    Scanner deposit_file = new Scanner(deposits);
+    Scanner deposits_file = new Scanner(deposits);
 
-    File withdrawls = new File("withdrawls.txt");
-    Scanner withdrawl_file = new Scanner(withdrawls);
+    while(deposits_file.hasNext())
+    {
+      double amount = deposits_file.nextDouble();
+      cust.deposit(amount);
+    }
 
-    SavingsAccount cust_num = new SavingsAccount();
-    cust_num.set_sbal(1300.00);
-    cust_num.set_withdrawl(100.00);
-    cust_num.set_deposit(500.00);
-    // cust_num.set(11);
-    // cust_num.set(8);
+    File withdraws = new File("withdraws.txt");
+    Scanner withdraws_file = new Scanner(withdraws);
 
-    System.out.println("The customer's account balance is: " + cust_num.get_sbal());
-    System.out.println("Ending balance after withdrwal is: " + cust_num.calc_withdrawl());
-    System.out.println("Ending balance after deposit is: " + cust_num.calc_deposit());
-    System.out.println("The customer's account balance is: " + cust_num.get_ebal());
-    // System.out.println("The Cube's width is: " + red.getWidth());
-    // System.out.println("The Cube's height is: " + red.getHeight());
+    while(withdraws_file.hasNext())
+    {
+      double amount = withdraws_file.nextDouble();
+      cust.withdraw(amount);
+    }
+
+    cust.monthly_interest();
+
+    System.out.printf("\nTotal interest earned: $%2.2f", cust.get_total_interest());
+    System.out.printf("\nFinal account balance: $%2.2f\n\n", cust.get_balance());
   }
 }
