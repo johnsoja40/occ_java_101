@@ -13,7 +13,6 @@ public class BankingApp
   {
     double start_balance;
     double annual_interest_rate;
-    int months;
     double deposit_amount;
     double withdraw_amount;
 
@@ -25,10 +24,7 @@ public class BankingApp
     System.out.print("Enter annual interest rate: ");
     annual_interest_rate = input.nextDouble();
 
-    System.out.print("Enter the number of months: ");
-    months = input.nextInt();
-
-    SavingsAccount cust = new SavingsAccount(start_balance, annual_interest_rate, months);
+    SavingsAccount cust = new SavingsAccount(start_balance, annual_interest_rate);
 
     File deposits = new File("deposits.txt");
     Scanner deposits_file = new Scanner(deposits);
