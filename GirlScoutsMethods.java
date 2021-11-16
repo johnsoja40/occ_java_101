@@ -25,8 +25,8 @@ public class GirlScoutsMethods
             case 2:
                name = get_name(keyboard);
                System.out.println("\nHello " + name);
-//                boxes = get_boxes(keyboard);
-//                process_data(boxes);
+               boxes = get_boxes(keyboard);
+               process_data(boxes);
                break;
             case 3:
                System.exit(0);
@@ -50,22 +50,24 @@ public class GirlScoutsMethods
       return name;
    }
    
-//    public static int get_boxes(Scanner keyboard) {
-//       System.out.println("How many boxes of cookies did you sell ? ");
-//       boxes = keyboard.nextInt();
-//    }
-//    
-//    public static int process_data(int boxes) {
-//    
-//       if ( boxes >= 250 )
-//          System.out.println("You win a laptop.");
-//       else if ( boxes >= 100 )
-//          System.out.println("You win a portable DVD player.");
-//       else if ( boxes >= 50 )
-//          System.out.println("You win an iPod.");
-//       else
-//          System.out.println("You suck at life.");   
-//       
-//    }
+   public static int get_boxes(Scanner keyboard) {
+      System.out.println("How many boxes of cookies did you sell ? ");
+      int boxes = keyboard.nextInt();
+      return boxes;
+   }
+   
+   public static String process_data(int boxes) {
+   
+      String result;
+      if ( boxes >= 250 )
+         result = "You win a laptop.";
+      else if ( boxes >= 100 )
+         result = "You win a portable DVD player.";
+      else if ( boxes >= 50 )
+         result = "You win an iPod.";
+      else
+         result = "You suck at life.";  
+      return result; 
+   }
          
 }

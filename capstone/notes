@@ -1,5 +1,10 @@
 https://docs.oracle.com/javafx/2/ui_controls/jfxpub-ui_controls.htm
 
-javac --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml -g TableViewSample.java
+javac --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml -g IceCreamOrderController.java
 
-java --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml TableViewSample
+java --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml IceCreamOrderController
+
+
+javac --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml -g IceCreamOrder.java
+
+java --module-path /Users/212682038/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml IceCreamOrder

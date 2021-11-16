@@ -8,16 +8,14 @@ public class SavingsAccount
 {
   private double balance;
   private double annual_interest_rate;
-  private int months;
   private double total_deposits;
   private double total_withdraws;;
   private double total_interest;
 
-  public SavingsAccount(double start_balance, double annual_interest_rate, int months)
+  public SavingsAccount(double start_balance, double annual_interest_rate)
   {
     balance = start_balance;
     this.annual_interest_rate = annual_interest_rate / 100;
-    this.months = months;
   }
 
   public void deposit(double amount)
@@ -46,7 +44,7 @@ public class SavingsAccount
 
   public double get_monthly_interest_rate()
   {
-    return annual_interest_rate / months;
+    return annual_interest_rate / 12;
   }
 
   public double get_total_interest()
